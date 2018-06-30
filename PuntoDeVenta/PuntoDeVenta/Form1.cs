@@ -15,5 +15,10 @@ namespace PuntoDeVenta
         {
             InitializeComponent();
         }
+
+        private void btnSortir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

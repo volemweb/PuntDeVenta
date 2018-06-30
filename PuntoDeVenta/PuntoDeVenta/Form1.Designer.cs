@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lblTituloPrincipal = new System.Windows.Forms.Label();
+            this.btnSortir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTituloPrincipal
@@ -40,11 +41,22 @@
             this.lblTituloPrincipal.TabIndex = 0;
             this.lblTituloPrincipal.Text = "Punt De Venta Volem Web";
             // 
+            // btnSortir
+            // 
+            this.btnSortir.Location = new System.Drawing.Point(312, 309);
+            this.btnSortir.Name = "btnSortir";
+            this.btnSortir.Size = new System.Drawing.Size(120, 23);
+            this.btnSortir.TabIndex = 1;
+            this.btnSortir.Text = "SORTIR";
+            this.btnSortir.UseVisualStyleBackColor = true;
+            this.btnSortir.Click += new System.EventHandler(this.btnSortir_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 353);
+            this.Controls.Add(this.btnSortir);
             this.Controls.Add(this.lblTituloPrincipal);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -56,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblTituloPrincipal;
+        private System.Windows.Forms.Button btnSortir;
     }
 }
 
