@@ -14,7 +14,7 @@ namespace PuntoDeVenta
         public Form1()
         {
             InitializeComponent();
-            lblEstat.Text = "Programa Iniciat";
+            lblEstat.Text = "Programa Iniciado";
         }
 
         private void btnSortir_Click(object sender, EventArgs e)
