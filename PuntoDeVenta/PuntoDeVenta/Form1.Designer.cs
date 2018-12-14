@@ -28,24 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTituloPrincipal = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnSortir = new System.Windows.Forms.Button();
             this.lblEstat = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblTituloPrincipal
-            // 
-            this.lblTituloPrincipal.AutoSize = true;
-            this.lblTituloPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloPrincipal.Location = new System.Drawing.Point(34, 42);
-            this.lblTituloPrincipal.Name = "lblTituloPrincipal";
-            this.lblTituloPrincipal.Size = new System.Drawing.Size(209, 20);
-            this.lblTituloPrincipal.TabIndex = 0;
-            this.lblTituloPrincipal.Text = "Punto De Venta Volem Web";
             // 
             // btnSortir
             // 
-            this.btnSortir.Location = new System.Drawing.Point(312, 309);
+            this.btnSortir.Location = new System.Drawing.Point(588, 6);
             this.btnSortir.Name = "btnSortir";
             this.btnSortir.Size = new System.Drawing.Size(120, 23);
             this.btnSortir.TabIndex = 1;
@@ -56,32 +50,69 @@
             // lblEstat
             // 
             this.lblEstat.AutoSize = true;
-            this.lblEstat.Location = new System.Drawing.Point(35, 319);
+            this.lblEstat.Location = new System.Drawing.Point(456, 9);
             this.lblEstat.Name = "lblEstat";
             this.lblEstat.Size = new System.Drawing.Size(109, 13);
             this.lblEstat.TabIndex = 2;
             this.lblEstat.Text = "Infromación Acciones";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem,
+            this.cajaToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(784, 29);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(77, 25);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // cajaToolStripMenuItem
+            // 
+            this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
+            this.cajaToolStripMenuItem.Size = new System.Drawing.Size(52, 25);
+            this.cajaToolStripMenuItem.Text = "Caja";
+            this.cajaToolStripMenuItem.Click += new System.EventHandler(this.cajaToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 353);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(784, 450);
             this.Controls.Add(this.lblEstat);
             this.Controls.Add(this.btnSortir);
-            this.Controls.Add(this.lblTituloPrincipal);
+            this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Punto de Venta";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTituloPrincipal;
         private System.Windows.Forms.Button btnSortir;
         private System.Windows.Forms.Label lblEstat;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cajaToolStripMenuItem;
+
+        public Clientes clientes = null;
+        public Caja caja = null;
     }
 }
 

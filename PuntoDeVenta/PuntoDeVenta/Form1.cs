@@ -21,5 +21,32 @@ namespace PuntoDeVenta
         {
             this.Close();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //He inicializado el formulario en InitializeComponent()
+            if (this.clientes == null)
+            {
+                clientes = new Clientes();
+                clientes.MdiParent = this;
+                clientes.Show();
+                clientes.WindowState = FormWindowState.Maximized;
+            }
+            else { clientes.Focus(); clientes.WindowState = FormWindowState.Maximized; }    
+        }
+
+        private void cajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //He inicializado el formulario en InitializeComponent()
+            if (this.caja == null)
+            {
+                caja = new Caja();
+                caja.MdiParent = this;
+                caja.Show();
+                caja.WindowState = FormWindowState.Maximized;
+            }
+            else { caja.Focus(); caja.WindowState = FormWindowState.Maximized; }
+
+        }
     }
 }
