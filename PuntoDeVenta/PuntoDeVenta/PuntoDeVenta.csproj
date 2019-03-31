@@ -49,7 +49,7 @@
     <Compile Include="Caja.Designer.cs">
       <DependentUpon>Caja.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente.cs" />
+    <Compile Include="Models\Cliente.cs" />
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +108,9 @@
     <None Include="PuntoDeVentaDataSet.xss">
       <DependentUpon>PuntoDeVentaDataSet.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
