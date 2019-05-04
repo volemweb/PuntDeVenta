@@ -54,7 +54,7 @@
             this.lblEstat.Name = "lblEstat";
             this.lblEstat.Size = new System.Drawing.Size(109, 13);
             this.lblEstat.TabIndex = 2;
-            this.lblEstat.Text = "Infromación Acciones";
+            this.lblEstat.Text = "Información Acciones";
             // 
             // menuStrip1
             // 

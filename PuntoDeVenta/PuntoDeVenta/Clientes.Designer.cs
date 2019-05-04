@@ -44,6 +44,8 @@
             this.txtBoxDireccion = new System.Windows.Forms.TextBox();
             this.txtBoxTelefono = new System.Windows.Forms.TextBox();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblTituloListadoClientes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.puntoDeVentaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +81,7 @@
             // 
             this.lblTituloClientes.AutoSize = true;
             this.lblTituloClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloClientes.Location = new System.Drawing.Point(21, 34);
+            this.lblTituloClientes.Location = new System.Drawing.Point(59, 64);
             this.lblTituloClientes.Name = "lblTituloClientes";
             this.lblTituloClientes.Size = new System.Drawing.Size(218, 20);
             this.lblTituloClientes.TabIndex = 0;
@@ -88,89 +90,121 @@
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(45, 94);
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Location = new System.Drawing.Point(46, 105);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(44, 13);
+            this.labelNombre.Size = new System.Drawing.Size(65, 16);
             this.labelNombre.TabIndex = 1;
-            this.labelNombre.Text = "Nombre";
+            this.labelNombre.Text = "Nombre *";
             // 
             // labelApelidos
             // 
             this.labelApelidos.AutoSize = true;
-            this.labelApelidos.Location = new System.Drawing.Point(45, 118);
+            this.labelApelidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApelidos.Location = new System.Drawing.Point(46, 129);
             this.labelApelidos.Name = "labelApelidos";
-            this.labelApelidos.Size = new System.Drawing.Size(49, 13);
+            this.labelApelidos.Size = new System.Drawing.Size(73, 16);
             this.labelApelidos.TabIndex = 2;
-            this.labelApelidos.Text = "Apellidos";
+            this.labelApelidos.Text = "Apellidos *";
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(45, 147);
+            this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion.Location = new System.Drawing.Point(46, 158);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
+            this.lblDireccion.Size = new System.Drawing.Size(73, 16);
             this.lblDireccion.TabIndex = 3;
-            this.lblDireccion.Text = "Dirección";
+            this.lblDireccion.Text = "Dirección *";
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(45, 172);
+            this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(46, 183);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(70, 16);
             this.lblTelefono.TabIndex = 4;
-            this.lblTelefono.Text = "Telefono";
+            this.lblTelefono.Text = "Telefono *";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(45, 200);
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(46, 211);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.Size = new System.Drawing.Size(50, 16);
             this.lblEmail.TabIndex = 5;
-            this.lblEmail.Text = "Email";
+            this.lblEmail.Text = "Email *";
             // 
             // txtBoxNombre
             // 
-            this.txtBoxNombre.Location = new System.Drawing.Point(127, 91);
+            this.txtBoxNombre.Location = new System.Drawing.Point(128, 102);
             this.txtBoxNombre.Name = "txtBoxNombre";
             this.txtBoxNombre.Size = new System.Drawing.Size(158, 20);
             this.txtBoxNombre.TabIndex = 6;
+            this.txtBoxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxNombre_KeyPress);
             // 
             // txtBoxApellidos
             // 
-            this.txtBoxApellidos.Location = new System.Drawing.Point(127, 118);
+            this.txtBoxApellidos.Location = new System.Drawing.Point(128, 129);
             this.txtBoxApellidos.Name = "txtBoxApellidos";
             this.txtBoxApellidos.Size = new System.Drawing.Size(158, 20);
             this.txtBoxApellidos.TabIndex = 7;
+            this.txtBoxApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxApellidos_KeyPress);
             // 
             // txtBoxDireccion
             // 
-            this.txtBoxDireccion.Location = new System.Drawing.Point(127, 144);
+            this.txtBoxDireccion.Location = new System.Drawing.Point(128, 155);
             this.txtBoxDireccion.Name = "txtBoxDireccion";
             this.txtBoxDireccion.Size = new System.Drawing.Size(158, 20);
             this.txtBoxDireccion.TabIndex = 8;
             // 
             // txtBoxTelefono
             // 
-            this.txtBoxTelefono.Location = new System.Drawing.Point(127, 171);
+            this.txtBoxTelefono.Location = new System.Drawing.Point(128, 182);
             this.txtBoxTelefono.Name = "txtBoxTelefono";
             this.txtBoxTelefono.Size = new System.Drawing.Size(158, 20);
             this.txtBoxTelefono.TabIndex = 9;
+            this.txtBoxTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxTelefono_KeyPress);
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Location = new System.Drawing.Point(127, 200);
+            this.txtBoxEmail.Location = new System.Drawing.Point(128, 211);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(158, 20);
             this.txtBoxEmail.TabIndex = 10;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(174, 252);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(112, 23);
+            this.btnGuardar.TabIndex = 11;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // lblTituloListadoClientes
+            // 
+            this.lblTituloListadoClientes.AutoSize = true;
+            this.lblTituloListadoClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloListadoClientes.Location = new System.Drawing.Point(456, 64);
+            this.lblTituloListadoClientes.Name = "lblTituloListadoClientes";
+            this.lblTituloListadoClientes.Size = new System.Drawing.Size(176, 20);
+            this.lblTituloListadoClientes.TabIndex = 12;
+            this.lblTituloListadoClientes.Text = "LISTADO CLIENTES";
+            // 
             // Clientes
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 499);
+            this.ClientSize = new System.Drawing.Size(732, 482);
             this.ControlBox = false;
+            this.Controls.Add(this.lblTituloListadoClientes);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtBoxEmail);
             this.Controls.Add(this.txtBoxTelefono);
             this.Controls.Add(this.txtBoxDireccion);
@@ -210,5 +244,7 @@
         private System.Windows.Forms.TextBox txtBoxDireccion;
         private System.Windows.Forms.TextBox txtBoxTelefono;
         private System.Windows.Forms.TextBox txtBoxEmail;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label lblTituloListadoClientes;
     }
 }
