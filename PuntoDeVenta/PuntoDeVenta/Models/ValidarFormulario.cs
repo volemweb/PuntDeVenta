@@ -29,7 +29,9 @@ namespace PuntoDeVenta.Models
                 else { e.Handled = true; } // si nos una tecla de las anteriores no se permite
             }
             catch (Exception ex)
-            { }
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         public void soloNumeros(KeyPressEventArgs e)
         {
@@ -50,7 +52,9 @@ namespace PuntoDeVenta.Models
                 else { e.Handled = true; } // si nos una tecla de las anteriores no se permite
             }
             catch (Exception ex)
-            { }
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         public bool esEmail(string email)
