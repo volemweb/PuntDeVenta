@@ -48,5 +48,18 @@ namespace PuntoDeVenta
             else { caja.Focus(); caja.WindowState = FormWindowState.Maximized; }
 
         }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //He inicializado el formulario en InitializeComponent()
+            if (this.productos == null)
+            {
+                productos = new Productos();
+                productos.MdiParent = this;
+                productos.Show();
+                productos.WindowState = FormWindowState.Maximized;
+            }
+            else { productos.Focus(); productos.WindowState = FormWindowState.Maximized; }
+        }
     }
 }

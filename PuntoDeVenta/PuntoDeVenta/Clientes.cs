@@ -32,6 +32,9 @@ namespace PuntoDeVenta
             // TODO: esta línea de código carga datos en la tabla 'puntoDeVentaDataSet.clientes' Puede moverla o quitarla según sea necesario.
             this.clientesTableAdapter.Fill(this.puntoDeVentaDataSet.clientes);
 
+            //NoTas : Para que un dataGrid no se puedan cambiar el alto de las celdas es tiene que poner la 
+            //AllowUserToResizeColumns = False ; AllowUserToResizeRows = false;
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -41,7 +44,12 @@ namespace PuntoDeVenta
 
                 try
                 {
-                    //this.clientesTableAdapter.Insert(txtBoxNombre.Text, txtBoxApellidos.Text, txtBoxDireccion.Text, txtBoxTelefono.Text, txtBoxEmail.Text);
+                    this.clientesTableAdapter.Insert(txtBoxNombre.Text, txtBoxApellidos.Text, txtBoxDireccion.Text, txtBoxTelefono.Text, txtBoxEmail.Text);
+
+                    MessageBox.Show("Datos guardados corretamente!!", "Guardado", MessageBoxButtons.OK);
+
+                    this.clientesTableAdapter.Fill(this.puntoDeVentaDataSet.clientes);
+
                 }
                 catch
                 {
@@ -50,7 +58,6 @@ namespace PuntoDeVenta
 
                 borrarDades();
 
-                MessageBox.Show("Datos guardados corretamente!!", "Guardado", MessageBoxButtons.OK);
             }
             else
             {
