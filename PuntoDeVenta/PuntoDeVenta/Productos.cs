@@ -4,14 +4,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
+using System.Net;
+
 
 namespace PuntoDeVenta
 {
+    public partial class Productos : Form
+    {
+        public Productos()
+        {
+            InitializeComponent();
+        }
+
         public class Producto
         {
             public string idNumber { get; set; }
@@ -24,19 +32,11 @@ namespace PuntoDeVenta
             public string Active { get; set; }
             public object Description { get; set; }
         }
-        // public string[] Sizes { get; set; }
-  
-          
-    public partial class Productos : Form
-    {
-        public Productos()
-        {
-            InitializeComponent();
-        }
+        // public string[] Sizes { get; set; } 
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             string url = "http://localhost/botigaOnline/WebService/listadoproductos.php";
 
             WebClient wc = new WebClient();
