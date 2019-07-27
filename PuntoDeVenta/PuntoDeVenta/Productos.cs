@@ -20,6 +20,7 @@ namespace PuntoDeVenta
             InitializeComponent();
         }
 
+
         public class Producto
         {
             public string idNumber { get; set; }
