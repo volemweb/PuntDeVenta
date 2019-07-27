@@ -46,8 +46,12 @@ namespace PuntoDeVenta
 
             var rs = JsonConvert.DeserializeObject<List<Producto>>(datos);
 
+           
             // datos = datos.TrimStart('['); Aixo Són porves fetes quant no podia deserialitzar
             // datos = datos.TrimEnd(']');
+
+            // Comprobación de cambio
         }
+         
     }
 }
