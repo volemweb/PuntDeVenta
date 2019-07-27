@@ -14,6 +14,8 @@ namespace PuntoDeVenta
     {
         ValidarFormulario validar = new ValidarFormulario();
 
+        int modificar = 0;
+
         public Clientes()
         {
             InitializeComponent();
@@ -35,6 +37,9 @@ namespace PuntoDeVenta
             //NoTas : Para que un dataGrid no se puedan cambiar el alto de las celdas es tiene que poner la 
             //AllowUserToResizeColumns = False ; AllowUserToResizeRows = false;
 
+            // MessageBox.Show(dataGridView1.CurrentCell.Value.ToString()); *Ver la celda seleccionada
+
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -44,16 +49,32 @@ namespace PuntoDeVenta
 
                 try
                 {
-                    this.clientesTableAdapter.Insert(txtBoxNombre.Text, txtBoxApellidos.Text, txtBoxDireccion.Text, txtBoxTelefono.Text, txtBoxEmail.Text);
+                    if (modificar == 0)
+                    {
 
-                    MessageBox.Show("Datos guardados corretamente!!", "Guardado", MessageBoxButtons.OK);
+                        this.clientesTableAdapter.Insert(txtBoxNombre.Text, txtBoxApellidos.Text, txtBoxDireccion.Text, txtBoxTelefono.Text, txtBoxEmail.Text);
 
-                    this.clientesTableAdapter.Fill(this.puntoDeVentaDataSet.clientes);
+                        MessageBox.Show("Datos guardados correctamente!!", "Guardado", MessageBoxButtons.OK);
 
+                        this.clientesTableAdapter.Fill(this.puntoDeVentaDataSet.clientes);
+                    }
+                    else
+                    {
+                        int idCliente = int.Parse(dataGridView1["IdClientes", dataGridView1.CurrentRow.Index].Value.ToString());
+
+                        this.clientesTableAdapter.UpdateQuery(txtBoxNombre.Text, txtBoxApellidos.Text, txtBoxDireccion.Text, txtBoxTelefono.Text, txtBoxEmail.Text, idCliente);
+
+                        MessageBox.Show("Datos modificados correctamente!!", "Guardado", MessageBoxButtons.OK);
+
+                        this.clientesTableAdapter.Fill(this.puntoDeVentaDataSet.clientes);
+
+                        modificar = 0;
+                    }
+             
                 }
                 catch
                 {
-                    MessageBox.Show("Error al gurdar los datos!!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al guardar o modificar los datos!!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 borrarDades();
@@ -105,5 +126,24 @@ namespace PuntoDeVenta
             validar.soloNumeros(e);
         }
 
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            modificar = 1;
+
+            txtBoxNombre.Text = dataGridView1["Nombre", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtBoxApellidos.Text = dataGridView1["Apellidos", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtBoxDireccion.Text = dataGridView1["Direccion", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtBoxTelefono.Text = dataGridView1["Telefono", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtBoxEmail.Text = dataGridView1["Email", dataGridView1.CurrentRow.Index].Value.ToString();
+
+        }
+
+        private void btnClienteNuevo_Click(object sender, EventArgs e)
+        {
+            modificar = 0;
+
+            borrarDades();
+        }
     }
 }
